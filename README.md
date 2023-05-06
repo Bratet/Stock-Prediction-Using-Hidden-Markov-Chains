@@ -1,1 +1,1 @@
-# Stock-Prediction-Using-Hidden-Markov-Chains
+# Music-Genre-Classification-using-Hidden-Markov-Models

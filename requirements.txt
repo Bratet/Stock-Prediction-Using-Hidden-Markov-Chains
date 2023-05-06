@@ -1,0 +1,4 @@
+python_speech_features
+scipy
+numpy
+matplotlib
