@@ -148,3 +148,17 @@ def viterbi(n_states, starting_matrix, transition_matrix, observation_matrix, ob
             delta[j, t] = np.max(delta[:, t-1] * transition_matrix[:, j]) * observation_matrix[j, observation_sequence[t]]
             psi[j, t] = np.argmax(delta[:, t-1] * transition_matrix[:, j])
     return delta, psi
+
+def generate_future_states(n_states, A, current_state, n_steps):
+    future_states = [current_state]
+    for _ in range(n_steps):
+        current_state = np.random.choice(n_states, p=A[current_state])
+        future_states.append(current_state)
+    return future_states
+
+def generate_future_observations(future_states, O):
+    future_observations = []
+    for state in future_states:
+        observation = np.random.choice(len(O[state]), p=O[state])
+        future_observations.append(observation)
+    return future_observations
