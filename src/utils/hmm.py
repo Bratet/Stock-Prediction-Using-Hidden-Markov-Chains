@@ -14,7 +14,6 @@ def forward(pi, A, O, observations):
 
     Returns:
         alpha: The forward probability matrix.
-        za: The scaling factor.
     """
     
     N = len(observations)
@@ -45,7 +44,6 @@ def backward(pi, A, O, observations):
 
     Returns:
         beta: The backward probability matrix.
-        zb: The scaling factor.
     """
         
     N = len(observations)
@@ -71,7 +69,6 @@ def baum_welch(o, N, iterations = 1000):
     Args:
     stock_prices: The sequence of stock prices.
         n_states: The number of hidden states.
-        rand_seed: The random seed for the random number generator.
         iterations: The number of iterations to run the algorithm.
 
     Returns:
@@ -128,11 +125,18 @@ def baum_welch(o, N, iterations = 1000):
 def viterbi(n_states, starting_matrix, transition_matrix, observation_matrix, observation_sequence):
     
     """
-    n_states: number of states
-    starting_matrix: starting probability matrix
-    transition_matrix: transition probability matrix
-    observation_matrix: observation probability matrix
-    observation_sequence: sequence of observations
+    Viterbi algorithm for finding the most likely sequence of hidden states.
+    
+    Args:
+        n_states: number of states
+        starting_matrix: starting probability matrix
+        transition_matrix: transition probability matrix
+        observation_matrix: observation probability matrix
+        observation_sequence: sequence of observations
+        
+    Returns:
+        delta: probability matrix
+        psi: most likely sequence of hidden states
     """
     
     n_observations = len(observation_sequence)
