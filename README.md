@@ -36,15 +36,3 @@ python predict.py
 ## Results
 
 The model's accuracy is evaluated by comparing the predicted price movements with the actual price movements in a test dataset. 
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
-## Acknowledgments
-
-This project was inspired by the paper "Hidden Markov Models for Financial Forecasting" by Ephraim, Malah and Sondhi.
-
----
-
-Please modify this README to fit the exact details and requirements of your project.
